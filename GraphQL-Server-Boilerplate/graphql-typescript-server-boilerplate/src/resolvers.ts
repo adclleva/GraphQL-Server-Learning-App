@@ -9,6 +9,6 @@ export const resolvers: ResolverMap = {
     register: (_, { email, password }: GQL.IRegisterOnMutationArguments) => {}
   }
 
-}
+};
 
 // we use a library called GQL2TS to get the type of the arguments
