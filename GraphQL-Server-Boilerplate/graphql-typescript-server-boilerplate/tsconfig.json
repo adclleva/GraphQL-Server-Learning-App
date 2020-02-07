@@ -23,3 +23,6 @@
    "exclude": ["node_modules"],
    "include": ["./src/**/*.tsx", "./src/**/*.ts"]
  }
+
+ // this config comes from https://github.com/benawad/graphql-ts-server-boilerplate/blob/master/tsconfig.json
+ 
