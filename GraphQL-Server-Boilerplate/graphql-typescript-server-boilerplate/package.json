@@ -4,17 +4,19 @@
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
       "@types/node": "^13.7.0",
+      "nodemon": "^2.0.2",
       "ts-node": "8.6.2",
       "tslint": "^6.0.0",
       "tslint-config-prettier": "^1.18.0",
       "typescript": "3.7.5"
    },
    "dependencies": {
+      "graphql-yoga": "^1.18.3",
       "pg": "^7.18.1",
       "reflect-metadata": "^0.1.13",
       "typeorm": "0.2.22"
    },
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "nodemon --exec ts-node src/index.ts"
    }
 }
