@@ -1,18 +1,28 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {
+    Entity,
+    Column,
+    PrimaryColumn,
+    BeforeInsert,
+    BaseEntity
+} from "typeorm";
 
+import * as uuidv4 from "uuid/v4";
 @Entity()
-export class User {
+export class User extends BaseEntity{
+    // 
+    @PrimaryColumn("uuid") id: string;
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @Column("varchar", { length: 225 })
+    email: string;
 
-    @Column()
-    firstName: string;
+    @Column("text") password: string;
 
-    @Column()
-    lastName: string;
-
-    @Column()
-    age: number;
-
+    // this special function/decorator from typeform that we can use
+    // decorators essentially add behavior to other objects at runtime
+    @BeforeInsert()
+    addId() {
+        this.id = uuidv4()
+    }
 }
+
+// extending from baseentitiy so we can do something like User.create({}) ... etc.
